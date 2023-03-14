@@ -1,3 +1,4 @@
+import { useState } from "react"; // Hook
 const AddMovie = (props) => {
   const [name, setName] = useState("");
 
@@ -8,7 +9,7 @@ const AddMovie = (props) => {
   }
 
   return (
-    <form onSubmit={(e) => submitAddMovieForm(e,props)}>
+    <form onSubmit={(e) => submitAddMovieForm(e, props)}>
       <div className="row text-white">
         <div className="col-12 text-center py-1 h4 text-success">
           Add Movie
