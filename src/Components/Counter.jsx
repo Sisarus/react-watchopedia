@@ -8,24 +8,27 @@ import { useState } from "react"; // Hook
 
 const Counter = () => {
   const [counterState, setCounterState] = useState(() => {
-    return {counter: 10};
+    return { counter: 10, titleTest: "Fun" };
   });
+  const [titleState, setTitleState] = useState("Fun");
 
   function incrementcounter() {
     setCounterState((prevState) => {
-      return{counter : prevState.counter + 1};
+      return { ...prevState, counter: prevState.counter + 1 };
     });
   }
 
   function decrementcounter() {
     setCounterState((prevState) => {
-        return {counter : prevState.counter - 1};
+      return { ...prevState, counter: prevState.counter - 1 };
     });
   }
 
   return (
     <div className="col-12 col-md-4 offset-md-4 border text-white p-3">
-      <span className="h2 pt-4 m-2 text-white-50">Fun Counter</span>
+      <span className="h2 pt-4 m-2 text-white-50">
+        {titleState} Counter
+      </span>
       <br />
       <button
         className="btn btn-success m-1"
